@@ -1,0 +1,22 @@
+def wordcount(word):
+    d=[]
+    d.append(word[0])
+    for i in range(1,len(word)):
+        for w in d:
+            if w==word[i]:
+                d.append(word[i])
+                break
+    for i in range(len(d)):
+        word.remove(d[0])
+    return d
+words=[]
+word=["A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D","A","B","C","D","A","B","A","B","C","D"]
+list1=[]
+d=wordcount(word)
+list1.append(d)
+while len(word)!=0:
+    d=wordcount(word)
+    list1.append(d)
+print("value\t|\tcount  ")
+for i in range(len(list1)):
+    print("{}\t|\t{} ".format(list1[i][0],len(list1[i])))
